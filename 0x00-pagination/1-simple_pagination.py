@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple Helper Function
+Simple Pagination
 """
 
 import csv
@@ -38,4 +38,31 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            pass
+        """
+	Get a page from the dataset
+	Args:
+	    page(int): The current page
+            page_size(int): The number of ittems per page
+	Return: A list of rows from the dataset
+        """
+        assert type(page) == int and type(page_size) == int
+        assert page > 0 and page_size > 0
+        start_index, end_index = index_range(page, page_size)
+        data = self.dataset()
+        if start > len(data):
+            return []
+        return data[start_index:end_index]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
