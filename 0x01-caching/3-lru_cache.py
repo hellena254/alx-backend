@@ -31,7 +31,7 @@ class LRUCache(BaseCaching):
                 # Update the item and mark it as recently used
                 self.cache_data.move_to_end(key)
             elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                # Remove the least recently used item (first item in OrderedDict)
+                # Remove the least recently used item
                 discarded_key, _ = self.cache_data.popitem(last=False)
                 print(f"DISCARD: {discarded_key}")
             self.cache_data[key] = item
