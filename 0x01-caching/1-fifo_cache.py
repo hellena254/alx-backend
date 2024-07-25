@@ -5,6 +5,7 @@ FIFO Caching module
 
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """
     FIFOCache inherits from BaseCaching and implements FIFO caching.
@@ -20,7 +21,6 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """
         Add an item to the cache using FIFO strategy.
-        
         Args:
             key (str): The key for the item.
             item (any): The item to be added to the cache.
