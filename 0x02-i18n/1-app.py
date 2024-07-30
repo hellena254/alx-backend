@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 
 """
 Basic Flask app setup with babel configf for i18n
@@ -27,7 +27,7 @@ def index() -> str:
     """
     Render the index page
     """
-    return render_template('0-index.html')
+    return render_template('1-index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
