@@ -29,8 +29,11 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale() -> str:
     """
-    Determine the best match for supported languages.
-    If the `locale` parameter is present in the request and valid, use it.
+    Determine the best match for supported languages in the order:
+    1. Locale from URL parameters
+    2. Locale from user settings
+    3. Locale from request header
+    4. Default locale
     Returns:
         str: The best matched language code.
     """
@@ -67,11 +70,10 @@ def index() -> str:
     Returns:
         str: The rendered template as a string.
     """
-    return render_template('5-index.html', 
+    return render_template('6-index.html', 
                            home_title=_("home_title"), 
                            home_header=_("home_header"),
                            logged_in_as=_("logged_in_as") % {'username': g.user['name']} if g.user else _("not_logged_in"))
 
 if __name__ == '__main__':
     app.run(debug=True)
-
