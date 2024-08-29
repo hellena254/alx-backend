@@ -163,4 +163,4 @@ Combine Redis, Kue, and Express to handle tasks:
    }
    ```
 
-Happy learning :)
+*Happy learning :)*
